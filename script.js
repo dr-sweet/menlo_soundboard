@@ -1,4 +1,6 @@
 const soundboard = document.querySelector(".soundboard");
+const toggle = document.getElementById("toggle");
+let restartSounds = false;
 
 const soundFiles = [
     "arrnarr.mp3",
