@@ -21,6 +21,10 @@ const soundFiles = [
     "wrecked.mp3"
 ];
 
+toggle.addEventListener("change", () => {
+  restartSounds = toggle.checked;
+});
+
 soundFiles.forEach(soundFile => {
   const tile = document.createElement("div");
   tile.className = "tile";
@@ -28,6 +32,11 @@ soundFiles.forEach(soundFile => {
   
   tile.addEventListener("click", () => {
     const audio = new Audio(`sounds/${soundFile}`);
+    
+    if (restartSounds) {
+      audio.currentTime = 0; // Restart the sound if toggle is on
+    }
+    
     audio.play();
   });
   
