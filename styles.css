@@ -1,0 +1,27 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-image: url('bg.jpeg'); /* Set the path to your background image */
+  background-repeat: repeat;
+  background-size: 25%;
+}
+
+.soundboard {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Adjust as needed */
+  gap: 10px;
+  max-width: 600px;
+}
+
+.tile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(81, 221, 95, 0.8); /* Add transparency to the tiles */
+  border: 1px solid #ccc;
+  padding: 20px;
+  cursor: pointer;
+}
