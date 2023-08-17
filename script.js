@@ -53,3 +53,6 @@ soundFiles.forEach(soundFile => {
   
   soundboard.appendChild(tile);
 });
+
+// Initialize the soundboard with toggle off
+toggle.checked = false;
