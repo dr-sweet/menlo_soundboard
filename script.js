@@ -55,4 +55,4 @@ soundFiles.forEach(soundFile => {
 });
 
 // Initialize the soundboard with toggle off
-toggle.checked = false;
+stopAndPlay = false;
