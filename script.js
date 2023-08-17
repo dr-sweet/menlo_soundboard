@@ -24,21 +24,30 @@ const soundFiles = [
 ];
 
 toggle.addEventListener("change", () => {
-  restartSounds = toggle.checked;
+  stopAndPlay = toggle.checked;
 });
+
+const audioElements = {}; // Store audio elements for each sound file
 
 soundFiles.forEach(soundFile => {
   const tile = document.createElement("div");
   tile.className = "tile";
   tile.textContent = soundFile.replace(".mp3", ""); // Display name without extension
   
+  const audio = new Audio(`sounds/${soundFile}`);
+  audioElements[soundFile] = audio;
+
   tile.addEventListener("click", () => {
-    const audio = new Audio(`sounds/${soundFile}`);
-    
-    if (restartSounds) {
-      audio.currentTime = 0; // Restart the sound if toggle is on
+    if (stopAndPlay && audio.currentTime > 0 && !audio.paused) {
+      // If toggle is on and audio is playing, stop and play from the beginning
+      audio.pause();
+      audio.currentTime = 0;
     }
-    
+    if (!stopAndPlay) {
+      // If toggle is off, allow simultaneous playback of multiple instances
+      const newAudio = new Audio(`sounds/${soundFile}`);
+      newAudio.play();
+    }
     audio.play();
   });
   
