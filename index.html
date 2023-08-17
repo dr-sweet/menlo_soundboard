@@ -1,19 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Menlo Coaching Soundboard</title>
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
+
 <body>
-  <div class="toggle-container">
-    <label for="toggle">Instant-Play</label>
-    <input type="checkbox" id="toggle">
+  <div class="w3-container">
+    <div class="w3-bar w3-green">
+      <div class="toggle-container">
+        <label for="toggle">No Overlapping Tracks</label>
+        <input class="w3-check" type="checkbox" id="toggle">
+      </div>
+    </div>
   </div>
-  <div class="soundboard">
-    <!-- Sound tiles will be added here -->
+  <div class="w3-container">
+    <div class="soundboard">
+      <!-- Sound tiles will be added here -->
+    </div>
+    <script src="script.js"></script>
   </div>
-  <script src="script.js"></script>
 </body>
+  
 </html>
